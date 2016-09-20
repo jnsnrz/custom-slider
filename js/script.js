@@ -33,18 +33,39 @@ var slides = [
 ];
 
 
+
+
 var prev = document.getElementsByClassName("navigation-prev")[0];
 var next = document.getElementsByClassName("navigation-next")[0];
 
 function init(){
 		var items = document.getElementsByClassName("item-container");
-		for (i=0; i < slides.length; i++){
+		
+		
+
+
+		for ( var i=0; i < slides.length; i++){
 			var img = document.createElement('img');
+			var title = document.createElement('span');
+			var desc = document.createElement('p');
+
+			var img_container = items[i].getElementsByClassName("item-image")[0];
+			var caption = items[i].getElementsByClassName("item-caption")[0];
+			var text = items[i].getElementsByClassName("item-text")[0];
+
 			img.src = path + slides[i].name;
 			img.alt = slides[i].caption;
 
-			var img_container = items[i].getElementsByClassName("item-image")[0];
+
+
+			var title_text = document.createTextNode(slides[i].caption);
+			var item_text = document.createTextNode(slides[i].text);
+
+			title.appendChild(title_text);
 			img_container.appendChild(img);
+			caption.appendChild(title);
+			text.appendChild(item_text);
+			desc.appendChild(text);
 		}
 
 		next.addEventListener("click", goNext);

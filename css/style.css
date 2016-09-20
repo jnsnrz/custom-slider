@@ -4,11 +4,13 @@ body{
 }
 
 #slider-wrapper{
-/* 	width:30000px; */
+	width: 1500px;
+    overflow: hidden;
+    position:relative;
 }
 
 #slider{
-	position:relative;
+	width:100000px;
 }
 
 .item-container{
@@ -33,4 +35,17 @@ body{
 .navigation-next{
 		top: 50%;
 		right : 0;
+	}
+
+
+	.animate-next{
+		margin-left: -502px;
+    	transition-property: margin-left;
+    	transition-duration: 9s;
+	}
+
+	.animate-prev{
+		margin-right: -502px;
+    	transition-property: margin-right;
+    	transition-duration: 9s;
 	}
